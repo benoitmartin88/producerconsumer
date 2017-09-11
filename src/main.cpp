@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-#include <deque>
 #include <thread>
 #include <mutex>
 #include <condition_variable>
@@ -12,7 +11,7 @@ public:
 	using Queue = std::queue<uint64_t>;
 
 	ProducerConsumer(const uint8_t nbProducer=1, const uint8_t nbConsumer=1, const uint64_t nbProducts=100) 
-	        : queue(), mutex(), nbProducer(nbProducer), nbConsumer(nbConsumer), nbProducts(nbProducts), producers(nbProducer), consumers(nbConsumer) {
+	        : queue(), mutex(), cv(), nbProducer(nbProducer), nbConsumer(nbConsumer), nbProducts(nbProducts), producers(nbProducer), consumers(nbConsumer) {
 		std::cout << "ProducerConsumer::ProducerConsumer() : "
 				<< "nbProducer=" << int64_t(nbProducer)
 				<< ", nbConsumer=" << int64_t(nbConsumer) 
