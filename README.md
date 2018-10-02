@@ -32,3 +32,29 @@ In the above example 2 producers and 3 consumers will created each in their own 
 Each producer will create 100 products that will be consumed by the consumers.
 
 
+
+# Compile the code
+
+From the repo root directory:
+```bash
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
+
+
+## Compile in Debug/Release
+
+By default the code will be compiled in Debug. 
+In order to specify the build type, the CMake `CMAKE_BUILD_TYPE` flag should be defined. 
+
+Debug:
+```bash
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+```
+
+Release:
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
